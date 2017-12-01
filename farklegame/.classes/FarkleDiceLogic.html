@@ -1,0 +1,425 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: FarkleDiceLogic</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">farklegame</a> ]
+</div>
+
+<h1>Coverage Summary for Class: FarkleDiceLogic (farklegame)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">FarkleDiceLogic</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (14/ 14)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (124/ 124)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">FarkleDiceLogic$MockitoMock$1067745055</td>
+  </tr>
+  <tr>
+    <td class="name">FarkleDiceLogic$MockitoMock$1067745055$auxiliary$bmoRujjm</td>
+  </tr>
+  <tr>
+    <td class="name">FarkleDiceLogic$MockitoMock$1067745055$auxiliary$chtrllVE</td>
+  </tr>
+  <tr>
+    <td class="name">FarkleDiceLogic$MockitoMock$1067745055$auxiliary$Co36gYXK</td>
+  </tr>
+  <tr>
+    <td class="name">FarkleDiceLogic$MockitoMock$1067745055$auxiliary$dsYpIqDj</td>
+  </tr>
+  <tr>
+    <td class="name">FarkleDiceLogic$MockitoMock$1067745055$auxiliary$Hbwyx5mD</td>
+  </tr>
+  <tr>
+    <td class="name">FarkleDiceLogic$MockitoMock$1067745055$auxiliary$JhASb5Pu</td>
+  </tr>
+  <tr>
+    <td class="name">FarkleDiceLogic$MockitoMock$1067745055$auxiliary$kKpPPH5g</td>
+  </tr>
+  <tr>
+    <td class="name">FarkleDiceLogic$MockitoMock$1067745055$auxiliary$nQN9Nncs</td>
+  </tr>
+  <tr>
+    <td class="name">FarkleDiceLogic$MockitoMock$1067745055$auxiliary$nRGhJGRF</td>
+  </tr>
+  <tr>
+    <td class="name">FarkleDiceLogic$MockitoMock$1067745055$auxiliary$qlqwRzrU</td>
+  </tr>
+  <tr>
+    <td class="name">FarkleDiceLogic$MockitoMock$1067745055$auxiliary$rwvDZjom</td>
+  </tr>
+  <tr>
+    <td class="name">FarkleDiceLogic$MockitoMock$1067745055$auxiliary$w6eNvFoX</td>
+  </tr>
+  <tr>
+    <td class="name">FarkleDiceLogic$MockitoMock$1067745055$auxiliary$y6GVJ9tJ</td>
+  </tr>
+  <tr>
+    <td class="name">FarkleDiceLogic$MockitoMock$1067745055$auxiliary$YHvYpRL1</td>
+  </tr>
+  <tr>
+    <td class="name">FarkleDiceLogic$MockitoMock$1067745055$auxiliary$ztUGNEDg</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (14/ 14)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (124/ 124)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package farklegame;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.util.ArrayList;
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;/**
+<i>6</i>&nbsp; * The FarkleDiceLogic class performs our actual game
+<i>7</i>&nbsp; * logic on Dice class objects. The requirements
+<i>8</i>&nbsp; * for this was obtained from an external source on Farkle game rules.
+<i>9</i>&nbsp; */
+<b class="fc"><i>10</i>&nbsp;public class FarkleDiceLogic {</b>
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;    /** bankedPoints is the amount of points you have in the bank.*/
+<b class="fc"><i>13</i>&nbsp;    private int bankedPoints = 0;</b>
+<i>14</i>&nbsp;    /** roundPoints is the amount of points you have in current round.*/
+<b class="fc"><i>15</i>&nbsp;    private int roundPoints = 0;</b>
+<i>16</i>&nbsp;    /** estRoundPoints is estimated round points after you roll.*/
+<b class="fc"><i>17</i>&nbsp;    private int estRoundPoints = 0;</b>
+<i>18</i>&nbsp;    /** This keeps track of the number of farkles.*/
+<b class="fc"><i>19</i>&nbsp;    private int farkleCounter = 0;</b>
+<i>20</i>&nbsp;    /** This keeps track of if it&#39;s currently farkled.*/
+<b class="fc"><i>21</i>&nbsp;    private boolean wonGame = false;</b>
+<i>22</i>&nbsp;    /** This keeps track of subsequent farkles. */
+<b class="fc"><i>23</i>&nbsp;    private final int farkle = 0;</b>
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;    /**
+<i>27</i>&nbsp;     * isFarkle is called in order to detect if a Farkle has been rolled.
+<i>28</i>&nbsp;     * It will call upon scoreHandAll, and compare it to roundPoints, if they&#39;re
+<i>29</i>&nbsp;     * equal that means that zero points have been scored this turn, and that it
+<i>30</i>&nbsp;     * is a Farkle. If it is a Farkle, you add 1 to the Farkle counters, at 3
+<i>31</i>&nbsp;     * Farkles you remove 1000 points from bankedPoints and reset the counter.
+<i>32</i>&nbsp;     * After a Farkle has been detected, it resets the round, and returns true.
+<i>33</i>&nbsp;     * If there was no Farkle, it just returns false.
+<i>34</i>&nbsp;     *
+<i>35</i>&nbsp;     * @param hand is the arraylist of dice being passed to isFarkle
+<i>36</i>&nbsp;     * @return Returns whether or not there has been a farkle.
+<i>37</i>&nbsp;     */
+<i>38</i>&nbsp;    public boolean isFarkle(final ArrayList&lt;Dice&gt; hand) {
+<b class="fc"><i>39</i>&nbsp;        if (scoreHand(hand) == farkle) {</b>
+<b class="fc"><i>40</i>&nbsp;            farkleCounter++;</b>
+<b class="fc"><i>41</i>&nbsp;            roundPoints = 0;</b>
+<b class="fc"><i>42</i>&nbsp;            if (farkleCounter &gt;= 3) {</b>
+<b class="fc"><i>43</i>&nbsp;                bankedPoints -= 1000;</b>
+<b class="fc"><i>44</i>&nbsp;                farkleCounter = 0;</b>
+<i>45</i>&nbsp;                }
+<b class="fc"><i>46</i>&nbsp;            resetRound(hand);</b>
+<b class="fc"><i>47</i>&nbsp;            return true;</b>
+<i>48</i>&nbsp;
+<i>49</i>&nbsp;        } else {
+<b class="fc"><i>50</i>&nbsp;            return false;</b>
+<i>51</i>&nbsp;        }
+<i>52</i>&nbsp;    }
+<i>53</i>&nbsp;
+<i>54</i>&nbsp;    /**
+<i>55</i>&nbsp;     * This tallies the current hand of dice and sets the roundPoints
+<i>56</i>&nbsp;     * variable accordingly.
+<i>57</i>&nbsp;     * @param hand The ArrayList&lt;Dice&gt; representing our current hand.
+<i>58</i>&nbsp;     */
+<i>59</i>&nbsp;    public void tallyRoundPoints(final ArrayList&lt;Dice&gt; hand) {
+<b class="fc"><i>60</i>&nbsp;        estRoundPoints = (roundPoints + scoreHand(hand));</b>
+<b class="fc"><i>61</i>&nbsp;    }</b>
+<i>62</i>&nbsp;
+<i>63</i>&nbsp;    /**
+<i>64</i>&nbsp;     * This function tallies the current hand of dice and sets the roundPoints
+<i>65</i>&nbsp;     * variable to it.
+<i>66</i>&nbsp;     * @param hand The ArrrayList&lt;Dice&gt; representing our current hand.
+<i>67</i>&nbsp;     */
+<i>68</i>&nbsp;    public void finalTallyRoundPoints(final ArrayList&lt;Dice&gt; hand) {
+<b class="fc"><i>69</i>&nbsp;        roundPoints += scoreHand(hand);</b>
+<b class="fc"><i>70</i>&nbsp;    }</b>
+<i>71</i>&nbsp;
+<i>72</i>&nbsp;    /**
+<i>73</i>&nbsp;     * rollHandStatus will go through the hand of dice passed to it and change
+<i>74</i>&nbsp;     * held dice to inactive dice, and then roll active dice.
+<i>75</i>&nbsp;     * @param hand The ArrayList&lt;Dice&gt; representing our current hand.
+<i>76</i>&nbsp;     */
+<i>77</i>&nbsp;    public void rollHandStatus(final ArrayList&lt;Dice&gt; hand) {
+<b class="fc"><i>78</i>&nbsp;        for (Dice j: hand) {</b>
+<b class="fc"><i>79</i>&nbsp;            if (!(j.isInactive())) {</b>
+<b class="fc"><i>80</i>&nbsp;                if (j.isHeld()) {</b>
+<b class="fc"><i>81</i>&nbsp;                    j.setInactive();</b>
+<i>82</i>&nbsp;                } else {
+<b class="fc"><i>83</i>&nbsp;                    j.roll();</b>
+<i>84</i>&nbsp;                }
+<i>85</i>&nbsp;            }
+<b class="fc"><i>86</i>&nbsp;        }</b>
+<b class="fc"><i>87</i>&nbsp;    }</b>
+<i>88</i>&nbsp;
+<i>89</i>&nbsp;    /**
+<i>90</i>&nbsp;     * ScoreHand determines points based off of which dice are held.
+<i>91</i>&nbsp;     * hande is first sent through an forloop, creating an array that has the
+<i>92</i>&nbsp;     * non-held number of each dice.
+<i>93</i>&nbsp;     * dice[0] = 4 would mean there are 4 &quot;1&quot; dice.
+<i>94</i>&nbsp;     * &quot;1&quot; dice and &quot;5&quot; dice are sent through their own switch-case, because
+<i>95</i>&nbsp;     * they are graded differently. While in the switch case they are counted
+<i>96</i>&nbsp;     * for pairs and straights. For details on specific score values read the
+<i>97</i>&nbsp;     * official Farkle rules. After going through the forloop they are compared
+<i>98</i>&nbsp;     * for which value is greater (but only for dice that can count for multiple
+<i>99</i>&nbsp;     * values), and the greater value is scored
+<i>100</i>&nbsp;     *
+<i>101</i>&nbsp;     * @param hand is the hand of dice passed to it.
+<i>102</i>&nbsp;
+<i>103</i>&nbsp;     * @return Returns the score integer.
+<i>104</i>&nbsp;     */
+<i>105</i>&nbsp;    public int scoreHand(final ArrayList&lt;Dice&gt; hand) {
+<b class="fc"><i>106</i>&nbsp;        int score = 0;</b>
+<b class="fc"><i>107</i>&nbsp;        int pairCount = 0;</b>
+<b class="fc"><i>108</i>&nbsp;        int straightCount = 0;</b>
+<b class="fc"><i>109</i>&nbsp;        int[] diceCount = new int[6];</b>
+<b class="fc"><i>110</i>&nbsp;        for (Dice j: hand) {</b>
+<b class="fc"><i>111</i>&nbsp;            if (j.isHeld() &amp;&amp; !(j.isInactive())) {</b>
+<b class="fc"><i>112</i>&nbsp;                diceCount[j.getVal() - 1] += 1;</b>
+<i>113</i>&nbsp;            }
+<b class="fc"><i>114</i>&nbsp;        }</b>
+<b class="fc"><i>115</i>&nbsp;        for (int i = 0;  i &lt; diceCount.length; i++) {</b>
+<b class="fc"><i>116</i>&nbsp;            if (i == 0) {</b>
+<b class="fc"><i>117</i>&nbsp;                switch (diceCount[0]) {</b>
+<b class="fc"><i>118</i>&nbsp;                    case 6: score += 2000;</b>
+<b class="fc"><i>119</i>&nbsp;                        break;</b>
+<b class="fc"><i>120</i>&nbsp;                    case 5: score += 1200;</b>
+<b class="fc"><i>121</i>&nbsp;                        break;</b>
+<b class="fc"><i>122</i>&nbsp;                    case 4: score += 1100;</b>
+<b class="fc"><i>123</i>&nbsp;                            pairCount += 2;</b>
+<b class="fc"><i>124</i>&nbsp;                        break;</b>
+<b class="fc"><i>125</i>&nbsp;                    case 3: score += 1000;</b>
+<b class="fc"><i>126</i>&nbsp;                        break;</b>
+<b class="fc"><i>127</i>&nbsp;                    case 2: score += 200;</b>
+<b class="fc"><i>128</i>&nbsp;                         pairCount++;</b>
+<b class="fc"><i>129</i>&nbsp;                        break;</b>
+<b class="fc"><i>130</i>&nbsp;                    case 1: score += 100;</b>
+<b class="fc"><i>131</i>&nbsp;                        straightCount++;</b>
+<b class="fc"><i>132</i>&nbsp;                        break;</b>
+<i>133</i>&nbsp;                    case 0:
+<b class="fc"><i>134</i>&nbsp;                        straightCount = 0;</b>
+<b class="fc"><i>135</i>&nbsp;                        break;</b>
+<b class="fc"><i>136</i>&nbsp;                    default: throw new IllegalArgumentException(</b>
+<i>137</i>&nbsp;                            &quot;Number of dice must be between 0 and 6.&quot;);
+<i>138</i>&nbsp;                }
+<i>139</i>&nbsp;            }
+<b class="fc"><i>140</i>&nbsp;            if (i == 4) {</b>
+<b class="fc"><i>141</i>&nbsp;                switch (diceCount[4]) {</b>
+<b class="fc"><i>142</i>&nbsp;                    case 6: score += 1000;</b>
+<b class="fc"><i>143</i>&nbsp;                        break;</b>
+<b class="fc"><i>144</i>&nbsp;                    case 5: score += 600;</b>
+<b class="fc"><i>145</i>&nbsp;                        break;</b>
+<b class="fc"><i>146</i>&nbsp;                    case 4: score += 550;</b>
+<b class="fc"><i>147</i>&nbsp;                      pairCount += 2;</b>
+<b class="fc"><i>148</i>&nbsp;                        break;</b>
+<b class="fc"><i>149</i>&nbsp;                    case 3: score += 500;</b>
+<b class="fc"><i>150</i>&nbsp;                        break;</b>
+<b class="fc"><i>151</i>&nbsp;                    case 2: score += 100;</b>
+<b class="fc"><i>152</i>&nbsp;                       pairCount++;</b>
+<b class="fc"><i>153</i>&nbsp;                       break;</b>
+<b class="fc"><i>154</i>&nbsp;                    case 1: score += 50;</b>
+<b class="fc"><i>155</i>&nbsp;                      straightCount++;</b>
+<b class="fc"><i>156</i>&nbsp;                        break;</b>
+<i>157</i>&nbsp;                    case 0:
+<b class="fc"><i>158</i>&nbsp;                        straightCount = 0;</b>
+<b class="fc"><i>159</i>&nbsp;                        break;</b>
+<b class="fc"><i>160</i>&nbsp;                    default: throw new IllegalArgumentException(</b>
+<i>161</i>&nbsp;                            &quot;Number of dice must be between 0 and 6.&quot;);
+<i>162</i>&nbsp;                }
+<i>163</i>&nbsp;            }
+<b class="fc"><i>164</i>&nbsp;            if (i != 0 &amp;&amp; i != 4) {</b>
+<b class="fc"><i>165</i>&nbsp;                switch (diceCount[i]) {</b>
+<b class="fc"><i>166</i>&nbsp;                    case 6: score += ((i + 1) * 100) * 2;</b>
+<b class="fc"><i>167</i>&nbsp;                        break;</b>
+<b class="fc"><i>168</i>&nbsp;                    case 5: score += ((i + 1) * 100);</b>
+<b class="fc"><i>169</i>&nbsp;                        break;</b>
+<b class="fc"><i>170</i>&nbsp;                    case 4: score += ((i + 1) * 100);</b>
+<b class="fc"><i>171</i>&nbsp;                        pairCount += 2;</b>
+<b class="fc"><i>172</i>&nbsp;                        break;</b>
+<i>173</i>&nbsp;                    case 3:
+<b class="fc"><i>174</i>&nbsp;                        score += ((i + 1) * 100);</b>
+<b class="fc"><i>175</i>&nbsp;                        break;</b>
+<i>176</i>&nbsp;                    case 2:
+<b class="fc"><i>177</i>&nbsp;                        pairCount++;</b>
+<b class="fc"><i>178</i>&nbsp;                        break;</b>
+<i>179</i>&nbsp;                    case 1:
+<b class="fc"><i>180</i>&nbsp;                        straightCount++;</b>
+<b class="fc"><i>181</i>&nbsp;                        break;</b>
+<i>182</i>&nbsp;                    case 0:
+<b class="fc"><i>183</i>&nbsp;                        straightCount = 0;</b>
+<b class="fc"><i>184</i>&nbsp;                        break;</b>
+<b class="fc"><i>185</i>&nbsp;                    default: throw new IllegalArgumentException(</b>
+<i>186</i>&nbsp;                            &quot;Number of dice must be between 0 and 6.&quot;);
+<i>187</i>&nbsp;            }
+<b class="fc"><i>188</i>&nbsp;                if (pairCount == 3) {</b>
+<b class="fc"><i>189</i>&nbsp;                    if (score &lt; 500) {</b>
+<b class="fc"><i>190</i>&nbsp;                        score = 500;</b>
+<i>191</i>&nbsp;                    }
+<i>192</i>&nbsp;                }
+<b class="fc"><i>193</i>&nbsp;                if (straightCount == 6) {</b>
+<b class="fc"><i>194</i>&nbsp;                    if (score &lt; 1000) {</b>
+<b class="fc"><i>195</i>&nbsp;                        score = 1000;</b>
+<i>196</i>&nbsp;                    }
+<i>197</i>&nbsp;                }
+<i>198</i>&nbsp;            }
+<i>199</i>&nbsp;        }
+<b class="fc"><i>200</i>&nbsp;        return score;</b>
+<i>201</i>&nbsp;    }
+<i>202</i>&nbsp;
+<i>203</i>&nbsp;    /** bankPoints is used to take the current round points and point them into
+<i>204</i>&nbsp;     *  the total bankpoints. It will also reset your round points and check to
+<i>205</i>&nbsp;     *  see if points are over 10,000 which would be a victory
+<i>206</i>&nbsp;     */
+<i>207</i>&nbsp;   public void bankPoints() {
+<i>208</i>&nbsp;
+<i>209</i>&nbsp;       //Adds current round points to our bank.
+<b class="fc"><i>210</i>&nbsp;        bankedPoints += getEstRoundPoints();</b>
+<b class="fc"><i>211</i>&nbsp;        roundPoints = 0; //resets round points when you bank.</b>
+<i>212</i>&nbsp;        // Checks to see if we&#39;ve won
+<b class="fc"><i>213</i>&nbsp;        if (bankedPoints &gt;= 10000) {</b>
+<b class="fc"><i>214</i>&nbsp;            wonGame = true; //Sets to true if we win.</b>
+<i>215</i>&nbsp;        }
+<b class="fc"><i>216</i>&nbsp;    }</b>
+<i>217</i>&nbsp;
+<i>218</i>&nbsp;    /**
+<i>219</i>&nbsp;     * Returns all dice to default state, not held and active, and then rerolls
+<i>220</i>&nbsp;     * them.
+<i>221</i>&nbsp;     * @param hand is the current hand of dice
+<i>222</i>&nbsp;     */
+<i>223</i>&nbsp;
+<i>224</i>&nbsp;    public void resetRound(final ArrayList&lt;Dice&gt; hand) {
+<b class="fc"><i>225</i>&nbsp;        for (Dice j: hand) {</b>
+<b class="fc"><i>226</i>&nbsp;            j.releaseDice();</b>
+<b class="fc"><i>227</i>&nbsp;            j.setActive();</b>
+<b class="fc"><i>228</i>&nbsp;            j.roll();</b>
+<b class="fc"><i>229</i>&nbsp;            estRoundPoints = 0;</b>
+<b class="fc"><i>230</i>&nbsp;        }</b>
+<b class="fc"><i>231</i>&nbsp;    }</b>
+<i>232</i>&nbsp;
+<i>233</i>&nbsp;    /**
+<i>234</i>&nbsp;     * Returns the current amount of banked points.
+<i>235</i>&nbsp;     * @return the current amount of banked points.
+<i>236</i>&nbsp;     */
+<i>237</i>&nbsp;    public int getBankedPoints() {
+<b class="fc"><i>238</i>&nbsp;        return bankedPoints;</b>
+<i>239</i>&nbsp;    }
+<i>240</i>&nbsp;
+<i>241</i>&nbsp;    /**
+<i>242</i>&nbsp;     * getRoundPoints is a getter for roundpoints.
+<i>243</i>&nbsp;     * @return The number of points this round
+<i>244</i>&nbsp;     */
+<i>245</i>&nbsp;    public int getRoundPoints() {
+<b class="fc"><i>246</i>&nbsp;        return roundPoints;</b>
+<i>247</i>&nbsp;    }
+<i>248</i>&nbsp;
+<i>249</i>&nbsp;    /**
+<i>250</i>&nbsp;     * getEstRoundPoints is a getter for estimated round points.
+<i>251</i>&nbsp;     * @return the number of estimated round points (round points + held dice)
+<i>252</i>&nbsp;     */
+<i>253</i>&nbsp;    public int getEstRoundPoints() {
+<b class="fc"><i>254</i>&nbsp;        return estRoundPoints;</b>
+<i>255</i>&nbsp;    }
+<i>256</i>&nbsp;
+<i>257</i>&nbsp;    /**
+<i>258</i>&nbsp;     * Is a getter for whether or not the game has won.
+<i>259</i>&nbsp;     * @return whether or not the game has been won.
+<i>260</i>&nbsp;     */
+<i>261</i>&nbsp;    public boolean wonGameStatus() {
+<b class="fc"><i>262</i>&nbsp;         return wonGame;</b>
+<i>263</i>&nbsp;}
+<i>264</i>&nbsp;
+<i>265</i>&nbsp;    /**
+<i>266</i>&nbsp;     * Returns number of farkles.
+<i>267</i>&nbsp;     * @return returns
+<i>268</i>&nbsp;     */
+<i>269</i>&nbsp;    public int getFarkle() {
+<b class="fc"><i>270</i>&nbsp;        return farkleCounter;</b>
+<i>271</i>&nbsp;    }
+<i>272</i>&nbsp;
+<i>273</i>&nbsp;    /**
+<i>274</i>&nbsp;     * Sets the banked score
+<i>275</i>&nbsp;     * @param score to set the game to
+<i>276</i>&nbsp;     */
+<i>277</i>&nbsp;    public void setScore(final int score) {
+<b class="fc"><i>278</i>&nbsp;        this.bankedPoints = score;</b>
+<b class="fc"><i>279</i>&nbsp;        if (this.bankedPoints &gt;= 10000) {</b>
+<b class="fc"><i>280</i>&nbsp;            this.wonGame = true;</b>
+<b class="fc"><i>281</i>&nbsp;            return;</b>
+<i>282</i>&nbsp;        }
+<b class="fc"><i>283</i>&nbsp;        this.wonGame = false;</b>
+<i>284</i>&nbsp;
+<i>285</i>&nbsp;
+<b class="fc"><i>286</i>&nbsp;    }</b>
+<i>287</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2017-11-30 21:09</div>
+</div>
+</body>
+</html>
